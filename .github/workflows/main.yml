@@ -17,7 +17,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    
+          # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
       - name: Setup Python
         uses: actions/setup-python@v2.3.1
         with:
@@ -28,9 +30,6 @@ jobs:
           # The target architecture (x86, x64) of the Python interpreter.
           architecture: x64 # optional
         
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
       # Runs a single command using the runners shell
       - name: Draw a winner
         run: python main.py
